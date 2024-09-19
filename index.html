@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- For responsive  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS SYSTEM</title>
+    <!-- wow js  -->
+     <link rel="stylesheet" href="css/animate.css">
+    <!-- google font  -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- bootstrap css  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- main file css  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 crud-head">
+                    <h1 class="text-center mt-5 mb-5 color-white">Product Management System</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <label for="productNameInp">Product Name </label><br>
+                    <input type="text" oninput="validateProductName()" placeholder="Product Name...." class="form-control mb-4 py-2" py-2 id="productNameInp">
+
+                    <label for="productPriceInp">Product Price </label><br>
+                    <input type="text" oninput="validateProductPrice()" placeholder="Product Price...." class="form-control mb-4 py-2" id="productPriceInp">
+
+                    <label for="produceCategoryInp">Product Category </label><br>
+                    <input type="text" class="form-control mb-4 py-2" placeholder="Product Category...." id="produceCategoryInp">
+
+                    <label for="produceDescInp">Product Description </label><br>
+                    <textarea type="text" class="form-control mb-3" placeholder="Product Description...." id="produceDescInp"></textarea>
+
+                    <button onclick="addProduct()" id="btnAdd" type="button" class="btn btn-success py-2 " >Add Product</button>
+                    <button onclick="saveUpdateProduct()" id="btnUpdate" type="button" class="btn btn-danger py-2 d-none " >Update Product</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="searchForm m-4 mx-auto ">
+            <div class="container">
+                <input oninput="searchProduct(this.value)" class="form-control w-75 mx-auto mb-3" type="text" placeholder="Search For Products..." id="searchInput">
+                <button id="btnDeleteAll" onclick="deleteAllProducts()" class="btn btn-danger form-control w-75">Delete All <span class="showDel"></span></button>
+            </div>
+            
+            
+        </div>
+
+        <div class="container mt-5 p-3  ">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <table class="table text-center table-responsive table-responsive-sm  table-striped table-hover mt-3 ">
+                        <thead class="table-dark"  >
+                            <th>Index</th>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Product Category</th>
+                            <th>Product Description</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody id="disData">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
